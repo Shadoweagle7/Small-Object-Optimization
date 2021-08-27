@@ -97,6 +97,13 @@ int main() {
 
 	std::cout << "[TEST]: stack_test = " << stack_test << " | heap_test = " << heap_test << "\n";
 
+	// The following will fail concept atomic constraints as there are no canary values to
+	// test values of:
+	// stack_test.check_canary_values(true);
+	// heap_test.check_canary_values(false);
+	// stack_test.check_canary_values(true);
+	// heap_test.check_canary_values(false);
+
 	storage<int, 4, 4> stack_with_canary_4_test;
 	storage<int, 4, 1> heap_with_canary_4_test;
 
